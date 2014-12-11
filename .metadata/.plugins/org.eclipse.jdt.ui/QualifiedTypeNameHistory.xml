@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="testkim.TimerTheead"/>
+<fullyQualifiedTypeName name="java.awt.Font"/>
+<fullyQualifiedTypeName name="testkim.TimerThread"/>
+<fullyQualifiedTypeName name="testkim.ThreadTimerEx"/>
+<fullyQualifiedTypeName name="java.lang.Integer"/>
+<fullyQualifiedTypeName name="java.lang.Runnable"/>
+<fullyQualifiedTypeName name="testkim.RunnableTimerEx"/>
+<fullyQualifiedTypeName name="java.lang.Thread.State"/>
+<fullyQualifiedTypeName name="testkim.ThreadMainEx"/>
+<fullyQualifiedTypeName name="java.awt.FlowLayout"/>
+<fullyQualifiedTypeName name="testkim.TimerRunnable"/>
+<fullyQualifiedTypeName name="java.awt.event.ActionListener"/>
+<fullyQualifiedTypeName name="javax.swing.JButton"/>
+<fullyQualifiedTypeName name="testkim.ThreadInterruptEx"/>
+<fullyQualifiedTypeName name="java.awt.Container"/>
+<fullyQualifiedTypeName name="java.lang.Math"/>
+<fullyQualifiedTypeName name="java.lang.Thread"/>
+<fullyQualifiedTypeName name="javax.swing.JLabel"/>
+<fullyQualifiedTypeName name="java.awt.Color"/>
+<fullyQualifiedTypeName name="java.lang.InterruptedException"/>
+<fullyQualifiedTypeName name="com.sun.xml.internal.ws.api.config.management.policy.ManagementAssertion.Setting"/>
+<fullyQualifiedTypeName name="oracle.jrockit.jfr.JFR"/>
+<fullyQualifiedTypeName name="javax.swing.JFrame"/>
+<fullyQualifiedTypeName name="java.awt.event.MouseAdapter"/>
+<fullyQualifiedTypeName name="java.awt.event.MouseEvent"/>
+<fullyQualifiedTypeName name="testkim.RandomThread"/>
+<fullyQualifiedTypeName name="testkim.ThreadFinishFlagEx"/>
+</qualifiedTypeNameHistroy>
