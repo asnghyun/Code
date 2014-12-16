@@ -1,0 +1,92 @@
+package testkim;
+
+import java.awt.Button;
+import java.awt.Event;
+import java.awt.Frame;
+import java.awt.GridLayout;
+import java.awt.Panel;
+import java.awt.TextArea;
+import java.awt.TextField;
+import java.io.DataInputStream;
+import java.io.DataOutputStream;
+import java.net.Socket;
+
+public class ChatClient extends Frame implements Runnable{
+	
+	
+	private static final long serialVersionUID = 1L;
+	
+	Socket soc;
+	TextField tf;
+	TextArea ta;
+	Button btnSend,btnClose;
+	String sendTo;
+	String LoginName;
+	Thread t = null;
+	DataOutputStream dout;
+	DataInputStream din;
+	
+	ChatClient(String LoginName,String chatwith) throws Exception{
+		super(LoginName);
+		this.LoginName = LoginName;
+		sendTo = chatwith;
+		tf = new TextField(50);
+		ta = new TextArea(50,50);
+		btnSend = new Button("Send");
+		btnClose = new Button("Close");
+		soc = new Socket("200.1.4.198",5000);
+		
+		din = new DataInputStream(soc.getInputStream());
+		dout = new DataOutputStream(soc.getOutputStream());
+		dout.writeUTF(LoginName);
+		
+		t =new Thread(this);
+		t.start();
+	}
+	void setup(){
+		setSize(600, 400);
+		setLayout(new GridLayout(2,1));
+		
+		add(ta);
+		Panel p = new Panel();
+				p.add(tf);
+				p.add(btnSend);
+				p.add(btnClose);
+				add(p);
+				show();
+	}
+	public boolean action(Event e, Object o){
+		if(e.arg.equals("Send")){
+			try{
+				dout.writeUTF(sendTo + ""+"DATA"+""+tf.getText().toString());
+				ta.append("\n"+LoginName+" Sayes:"+ tf.getText().toString());
+				tf.setText("");
+			}catch (Exception ex){
+			}
+			} else if(e.arg.equals("Close")){
+				try{
+					dout.writeUTF(LoginName+"LOGOUT");
+					System.exit(1);
+				}catch(Exception ex){
+				}
+				}
+		return super.action(e, 0);
+		}
+
+	public static void main(String[] args) throws Exception {
+		// TODO Auto-generated method stub
+		ChatClient cClient = new ChatClient("±è»óÇö", "±èÃ¢¼ö");
+		cClient.setup();
+	}
+		public void run(){
+			while(true){
+				try{
+					ta.append("\n" + sendTo + " Says:" + din.readUTF());
+				}catch(Exception ex){
+					ex.printStackTrace();
+			}
+		}
+
+	}
+
+}
